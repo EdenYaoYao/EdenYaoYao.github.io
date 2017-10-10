@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf() | EdenYaoYao`s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="EdenYaoYao,EdenYaoYao's Blog" />
+  
+  <meta name="description" content="filter():对数组中的每个元素都执行一次指定的函数（callback），并且创建一个新的数组，该数组元素是所有回调函数执行时返回值为 true 的原数组元素。它只对数组中的非空元素执行指定的函数，没有赋值或者已经删除的元素将被忽略，同时，新创建的数组也不会包含这些元素。">
+<meta name="keywords" content="开源项目,数组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()">
+<meta property="og:url" content="http://yoursite.com/2017/10/09/article5/index.html">
+<meta property="og:site_name" content="EdenYaoYao`s Blog">
+<meta property="og:description" content="filter():对数组中的每个元素都执行一次指定的函数（callback），并且创建一个新的数组，该数组元素是所有回调函数执行时返回值为 true 的原数组元素。它只对数组中的非空元素执行指定的函数，没有赋值或者已经删除的元素将被忽略，同时，新创建的数组也不会包含这些元素。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-09T13:59:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()">
+<meta name="twitter:description" content="filter():对数组中的每个元素都执行一次指定的函数（callback），并且创建一个新的数组，该数组元素是所有回调函数执行时返回值为 true 的原数组元素。它只对数组中的非空元素执行指定的函数，没有赋值或者已经删除的元素将被忽略，同时，新创建的数组也不会包含这些元素。">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">EdenYaoYao&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        EdenYaoYao&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        EdenYaoYao的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="EdenYaoYao" target="_blank" href="http://localhost:4000/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/EdenYaoYao">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/EdenYaoYao">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-article5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/JavaScript/">JavaScript</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-10-09
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="filter"><a href="#filter" class="headerlink" title="filter():"></a>filter():</h3><p>对数组中的每个元素都执行一次指定的函数（callback），并且创建一个新的数组，该数组元素是所有回调函数执行时返回值为 true 的原数组元素。它只对数组中的非空元素执行指定的函数，没有赋值或者已经删除的元素将被忽略，同时，新创建的数组也不会包含这些元素。<br><a id="more"></a><br>参数说明：<br>callback： 要对每个数组元素执行的回调函数。<br>thisObject ： 在执行回调函数时定义的this对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//过滤掉小于 10 的数组元素：</span></div><div class="line"><span class="comment">//代码：</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (element &gt;= <span class="number">10</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> filtered = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBigEnough);</div><div class="line"><span class="comment">// 12, 130, 44</span></div><div class="line"><span class="comment">//结果：[12, 5, 8, 130, 44].filter(isBigEnough) ： 12, 130, 44</span></div></pre></td></tr></table></figure></p>
+<h3 id="map"><a href="#map" class="headerlink" title="map():"></a>map():</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//将所有的数组元素转换为大写：</span></div><div class="line"><span class="keyword">var</span> strings = [<span class="string">"hello"</span>, <span class="string">"Array"</span>, <span class="string">"WORLD"</span>];</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeUpperCase</span>(<span class="params">v</span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">return</span> v.toUpperCase();</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> uppers = strings.map(makeUpperCase);</div><div class="line"><span class="comment">// uppers is now ["HELLO", "ARRAY", "WORLD"]</span></div><div class="line"><span class="comment">// strings is unchanged</span></div><div class="line"><span class="comment">//结果：["hello", "Array", "WORLD"].map(makeUpperCase) ： HELLO, ARRAY, WORLD</span></div></pre></td></tr></table></figure>
+<h3 id="some"><a href="#some" class="headerlink" title="some():"></a>some():</h3><p>对数组中的每个元素都执行一次指定的函数（callback），直到此函数返回 true，如果发现这个元素，some 将返回 true，如果回调函数对每个元素执行后都返回 false ，some 将返回 false。它只对数组中的非空元素执行指定的函数，没有赋值或者已经删除的元素将被忽略。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//检查是否有数组元素大于等于10：</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (element &gt;= <span class="number">10</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> passed = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>].some(isBigEnough);</div><div class="line"><span class="comment">// passed is false</span></div><div class="line">passed = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">1</span>, <span class="number">4</span>].some(isBigEnough);</div><div class="line"><span class="comment">// passed is true</span></div><div class="line"><span class="comment">//结果：</span></div><div class="line"><span class="comment">//[2, 5, 8, 1, 4].some(isBigEnough) ： false </span></div><div class="line"><span class="comment">//[12, 5, 8, 1, 4].some(isBigEnough) ： true</span></div></pre></td></tr></table></figure></p>
+<h3 id="every"><a href="#every" class="headerlink" title="every():"></a>every():</h3><p>对数组中的每个元素都执行一次指定的函数（callback），直到此函数返回 false，如果发现这个元素，every 将返回 false，如果回调函数对每个元素执行后都返回 true ，every 将返回 true。它只对数组中的非空元素执行指定的函数，没有赋值或者已经删除的元素将被忽略<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//测试是否所有数组元素都大于等于10：</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (element &gt;= <span class="number">10</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> passed = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].every(isBigEnough);</div><div class="line"><span class="comment">// passed is false</span></div><div class="line">passed = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].every(isBigEnough);</div><div class="line"><span class="comment">// passed is true</span></div><div class="line"><span class="comment">//结果：</span></div><div class="line"><span class="comment">//[12, 5, 8, 130, 44].every(isBigEnough) 返回 ： false </span></div><div class="line"><span class="comment">//[12, 54, 18, 130, 44].every(isBigEnough) 返回 ： true</span></div></pre></td></tr></table></figure></p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach():"></a>forEach():</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//打印数组内容：</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printElt</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.writeln(<span class="string">"["</span> + index + <span class="string">"] is "</span> + element + <span class="string">"&lt;br /&gt;"</span>);</div><div class="line">&#125;</div><div class="line">[<span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>].forEach(printElt);</div><div class="line"><span class="comment">// Prints:</span></div><div class="line"><span class="comment">// [0] is 2</span></div><div class="line"><span class="comment">// [1] is 5</span></div><div class="line"><span class="comment">// [2] is 9</span></div><div class="line"><span class="comment">//结果：</span></div><div class="line"><span class="comment">//[0] is 2</span></div><div class="line"><span class="comment">//[1] is 5</span></div><div class="line"><span class="comment">//[2] is 9</span></div></pre></td></tr></table></figure>
+<h3 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf():"></a>lastIndexOf():</h3><p>参数说明<br>searchElement： 要搜索的元素<br>fromIndex ： 开始搜索的位置，默认为数组的长度（length），在这样的情况下，将搜索所有的数组元素。搜索是反方向进行的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查找符合条件的元素：</span></div><div class="line"><span class="keyword">var</span> array = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> index = array.lastIndexOf(<span class="number">2</span>);</div><div class="line"><span class="comment">// index is 3</span></div><div class="line">index = array.lastIndexOf(<span class="number">7</span>);</div><div class="line"><span class="comment">// index is -1</span></div><div class="line">index = array.lastIndexOf(<span class="number">2</span>, <span class="number">3</span>);</div><div class="line"><span class="comment">// index is 3</span></div><div class="line">index = array.lastIndexOf(<span class="number">2</span>, <span class="number">2</span>);</div><div class="line"><span class="comment">// index is 0</span></div><div class="line">index = array.lastIndexOf(<span class="number">2</span>, <span class="number">-2</span>);</div><div class="line"><span class="comment">// index is 0</span></div><div class="line">index = array.lastIndexOf(<span class="number">2</span>, <span class="number">-1</span>);</div><div class="line"><span class="comment">// index is 3</span></div><div class="line"><span class="comment">//结果：</span></div><div class="line"><span class="comment">//[2, 5, 9, 2].lastIndexOf(2) ： 3 </span></div><div class="line"><span class="comment">//[2, 5, 9, 2].lastIndexOf(7) ： -1 </span></div><div class="line"><span class="comment">//[2, 5, 9, 2].lastIndexOf(2, 3) ： 3 </span></div><div class="line"><span class="comment">//[2, 5, 9, 2].lastIndexOf(2, 2) ： 0 </span></div><div class="line"><span class="comment">//[2, 5, 9, 2].lastIndexOf(2, -2) ： 0 </span></div><div class="line"><span class="comment">//[2, 5, 9, 2].lastIndexOf(2, -1) ： 3</span></div></pre></td></tr></table></figure></p>
+<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf():"></a>indexOf():</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查找符合条件的元素：</span></div><div class="line"><span class="keyword">var</span> array = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> index = array.indexOf(<span class="number">2</span>);</div><div class="line"><span class="comment">// index is 0</span></div><div class="line">index = array.indexOf(<span class="number">7</span>);</div><div class="line"><span class="comment">// index is -1</span></div><div class="line"><span class="comment">//结果：</span></div><div class="line"><span class="comment">//[2, 5, 9].indexOf(2) ： 0 </span></div><div class="line"><span class="comment">//[2, 5, 9].indexOf(7) ： -1</span></div></pre></td></tr></table></figure>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年10月09日 21:59</p>
+        <p>原始链接： <a class="post-url" href="/2017/10/09/article5/" title="Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()">http://yoursite.com/2017/10/09/article5/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="EdenYaoYao">
+                EdenYaoYao
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/10/09/article5/&title=《Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()》 — EdenYaoYao`s Blog&pic=http://oerolc7og.bkt.clouddn.com/images/miho/theme/github-second.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/10/09/article5/&title=《Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()》 — EdenYaoYao`s Blog&source=filter():对数组中的每个元素都执行一次指定的函数（callback），并且创建一个新的数组，该数组元素是所有回调函数执行时返回值为 true 的原..." data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/09/article5/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()》 — EdenYaoYao`s Blog&url=http://yoursite.com/2017/10/09/article5/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/09/article5/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2017/10/09/article5/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/开源项目/" class="color5">开源项目</a>
+      
+    <a href="/tags/数组/" class="color3">数组</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#filter"><span class="post-toc-text">filter():</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#map"><span class="post-toc-text">map():</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#some"><span class="post-toc-text">some():</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#every"><span class="post-toc-text">every():</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#forEach"><span class="post-toc-text">forEach():</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#lastIndexOf"><span class="post-toc-text">lastIndexOf():</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#indexOf"><span class="post-toc-text">indexOf():</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/10/09/article6/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Linux环境变量配置</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="SOHUCS" sid="article5" ></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'true';
+        var conf = 'true';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <!-- 
+ -->
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2017 EdenYaoYao<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/Javascript/">Javascript</a><a class="category-link" href="/categories/Linux/">Linux</a><a class="category-link" href="/categories/WebApp/">WebApp</a><a class="category-link" href="/categories/开源项目/">开源项目</a><a class="category-link" href="/categories/早安心语/">早安心语</a><a class="category-link" href="/categories/规范/">规范</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/早安心语/" style="font-size: 10px;">早安心语</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/自适应布局/" style="font-size: 10px;">自适应布局</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/早安心语/" style="font-size: 10px;">早安心语</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/自适应布局/" style="font-size: 10px;">自适应布局</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

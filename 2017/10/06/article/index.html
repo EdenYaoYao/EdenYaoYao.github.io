@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>遍历方法 | EdenYaoYao`s Blog</title>
+  <title>移动端自适应布局的方案 | EdenYaoYao`s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="EdenYaoYao,EdenYaoYao's Blog" />
   
-  <meta name="description" content="遍历方法1.forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。2.使用foreach遍历数组的话，使用break不能中断循环，使用return也不能返回到外层函数。3.for in更适合遍历对象，会遍历数组所有的可枚举属性，包括原型。例如上栗的原型方法method和name属性4.ES6中for of遍历的只是数组内的元素，而不包括数组的原型属性method和索引name注意">
-<meta name="keywords" content="开源项目,遍历">
+  <meta name="description" content="关于移动端自适应布局的方案，粗略概要···">
+<meta name="keywords" content="移动端,自适应布局">
 <meta property="og:type" content="article">
-<meta property="og:title" content="遍历方法">
-<meta property="og:url" content="http://yoursite.com/2017/10/09/article3/index.html">
+<meta property="og:title" content="移动端自适应布局的方案">
+<meta property="og:url" content="http://yoursite.com/2017/10/06/article/index.html">
 <meta property="og:site_name" content="EdenYaoYao`s Blog">
-<meta property="og:description" content="遍历方法1.forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。2.使用foreach遍历数组的话，使用break不能中断循环，使用return也不能返回到外层函数。3.for in更适合遍历对象，会遍历数组所有的可枚举属性，包括原型。例如上栗的原型方法method和name属性4.ES6中for of遍历的只是数组内的元素，而不包括数组的原型属性method和索引name注意">
+<meta property="og:description" content="关于移动端自适应布局的方案，粗略概要···">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-09T13:29:18.000Z">
+<meta property="og:updated_time" content="2017-10-09T13:04:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="遍历方法">
-<meta name="twitter:description" content="遍历方法1.forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。2.使用foreach遍历数组的话，使用break不能中断循环，使用return也不能返回到外层函数。3.for in更适合遍历对象，会遍历数组所有的可枚举属性，包括原型。例如上栗的原型方法method和name属性4.ES6中for of遍历的只是数组内的元素，而不包括数组的原型属性method和索引name注意">
+<meta name="twitter:title" content="移动端自适应布局的方案">
+<meta name="twitter:description" content="关于移动端自适应布局的方案，粗略概要···">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -107,14 +107,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-article3" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-article" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      遍历方法
+      移动端自适应布局的方案
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -122,12 +122,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/JavaScript/">JavaScript</a>
+                      <a href="/categories/WebApp/">WebApp</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2017-10-09
+          <i class="fa fa-calendar"></i>  2017-10-06
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -143,12 +143,17 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="遍历方法"><a href="#遍历方法" class="headerlink" title="遍历方法"></a>遍历方法</h3><p>1.forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。<br>2.使用foreach遍历数组的话，使用break不能中断循环，使用return也不能返回到外层函数。<br>3.for in更适合遍历对象，会遍历数组所有的可枚举属性，包括原型。例如上栗的原型方法method和name属性<br>4.ES6中for of遍历的只是数组内的元素，而不包括数组的原型属性method和索引name<br>注意，for in遍历的是数组的索引（即键名），而for of遍历的是数组元素值<br><a id="more"></a></p>
+            <p>关于移动端自适应布局的方案，粗略概要···<br><a id="more"></a></p>
+<h5 id="Flexbox"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox</h5><p>使用css3 flexbox 进行布局，对于富媒体和复杂排版的支持非常强大，未普及兼容性非常差。</p>
+<h5 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h5><p> 使用 em 或 rem 单位进行相对布局，相对 % 百分比更加灵活，同时可以支持浏览器的字体大小调整和缩放等的正常显示。</p>
+<h5 id="流式布局（Fluid）"><a href="#流式布局（Fluid）" class="headerlink" title="流式布局（Fluid）"></a>流式布局（Fluid）</h5><p>使用 % 百分比定义宽度，高度大都是用px来固定住，可以根据可视区域 (viewport) 和父元素的实时尺寸进行调整，尽可能的适应各种分辨率。往往配合 max-width 等属性控制尺寸流动范围以免过大或者过小影响阅读。代表作栅栏系统（网格系统）</p>
+<h5 id="响应式布局（Responsive）"><a href="#响应式布局（Responsive）" class="headerlink" title="响应式布局（Responsive）"></a>响应式布局（Responsive）</h5><p>使用 @media 媒体查询 给不同尺寸和介质的设备切换不同的样。在优秀的响应范围设计下可以给适配范围内的设备最好的体验，在同一个设备下实际还是固定的布局。</p>
+<h5 id="自适应布局（-Adaptive）"><a href="#自适应布局（-Adaptive）" class="headerlink" title="自适应布局（ Adaptive）"></a>自适应布局（ Adaptive）</h5><p>通常使用@media媒体查询和网格系统 (Grid System) 配合相对布局单位进行布局，实际上就是综合响应式、流动等上述技术通过 CSS 给单一网页不同设备返回不同样式的技术统称。自适应几乎已经成为优秀页面布局的标准。</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年10月09日 21:29</p>
-        <p>原始链接： <a class="post-url" href="/2017/10/09/article3/" title="遍历方法">http://yoursite.com/2017/10/09/article3/</a></p>
+        <p>最后更新： 2017年10月09日 21:04</p>
+        <p>原始链接： <a class="post-url" href="/2017/10/06/article/" title="移动端自适应布局的方案">http://yoursite.com/2017/10/06/article/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="EdenYaoYao">
@@ -170,7 +175,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/10/09/article3/&title=《遍历方法》 — EdenYaoYao`s Blog&pic=http://oerolc7og.bkt.clouddn.com/images/miho/theme/github-second.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/10/06/article/&title=《移动端自适应布局的方案》 — EdenYaoYao`s Blog&pic=http://oerolc7og.bkt.clouddn.com/images/miho/theme/github-second.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -180,22 +185,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/10/09/article3/&title=《遍历方法》 — EdenYaoYao`s Blog&source=遍历方法1.forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。2.使用foreach遍历数组的话，使用break不能中断循环，使用r..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/10/06/article/&title=《移动端自适应布局的方案》 — EdenYaoYao`s Blog&source=关于移动端自适应布局的方案，粗略概要···" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/09/article3/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/06/article/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《遍历方法》 — EdenYaoYao`s Blog&url=http://yoursite.com/2017/10/09/article3/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《移动端自适应布局的方案》 — EdenYaoYao`s Blog&url=http://yoursite.com/2017/10/06/article/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/09/article3/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/06/article/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -205,7 +210,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2017/10/09/article3/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2017/10/06/article/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -217,9 +222,9 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/开源项目/" class="color5">开源项目</a>
+    <a href="/tags/移动端/" class="color4">移动端</a>
       
-    <a href="/tags/遍历/" class="color3">遍历</a>
+    <a href="/tags/自适应布局/" class="color1">自适应布局</a>
       
   </li>
 
@@ -232,35 +237,30 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#遍历方法"><span class="post-toc-text">遍历方法</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Flexbox"><span class="post-toc-text">Flexbox</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#弹性布局"><span class="post-toc-text">弹性布局</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#流式布局（Fluid）"><span class="post-toc-text">流式布局（Fluid）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#响应式布局（Responsive）"><span class="post-toc-text">响应式布局（Responsive）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#自适应布局（-Adaptive）"><span class="post-toc-text">自适应布局（ Adaptive）</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2017/10/09/article6/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/06/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          Linux环境变量配置
+          要低头做事，更要睁眼看人
         
       </span>
     </a>
   
-  
-    <a href="/2017/10/08/article2/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Gulp前端项目构建最佳实践</span>
-      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
-    </a>
   
 </nav>
 
 
 
     
-        <div id="SOHUCS" sid="article3" ></div>
+        <div id="SOHUCS" sid="article" ></div>
 <script type="text/javascript">
     (function(){
         var appid = 'true';

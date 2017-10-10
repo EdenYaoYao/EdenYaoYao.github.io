@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo+Github搭建个人博客 | EdenYaoYao`s Blog</title>
+  <title>Gulp前端项目构建最佳实践 | EdenYaoYao`s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="EdenYaoYao,EdenYaoYao's Blog" />
   
-  <meta name="description" content="一. 主题简介&amp;emsp;&amp;emsp;前段时间本人利用业余时间，在网上查询各种资料，使用Hexo+Github的方式搭建起了我个人的博客——BrightLoong。相信网上已经有无数前辈写了类似的文章来记录如何搭建博客的过程和步骤，我也不哗众取宠或者班门弄斧了，把我在搭建博客中使用 资料做一个收集，同时也将我在搭建博客过程中遇到的坑列举出来，以及对应的解决方法，也是对搭建博客过程的一个记录，毕竟好">
-<meta name="keywords" content="博客,开源项目">
+  <meta name="description" content="基于前端的自动化构建工具">
+<meta name="keywords" content="开源项目,Gulp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+Github搭建个人博客">
+<meta property="og:title" content="Gulp前端项目构建最佳实践">
 <meta property="og:url" content="http://yoursite.com/2017/10/08/article2/index.html">
 <meta property="og:site_name" content="EdenYaoYao`s Blog">
-<meta property="og:description" content="一. 主题简介&amp;emsp;&amp;emsp;前段时间本人利用业余时间，在网上查询各种资料，使用Hexo+Github的方式搭建起了我个人的博客——BrightLoong。相信网上已经有无数前辈写了类似的文章来记录如何搭建博客的过程和步骤，我也不哗众取宠或者班门弄斧了，把我在搭建博客中使用 资料做一个收集，同时也将我在搭建博客过程中遇到的坑列举出来，以及对应的解决方法，也是对搭建博客过程的一个记录，毕竟好">
+<meta property="og:description" content="基于前端的自动化构建工具">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-08T01:52:13.686Z">
+<meta property="og:updated_time" content="2017-10-09T13:25:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+Github搭建个人博客">
-<meta name="twitter:description" content="一. 主题简介&amp;emsp;&amp;emsp;前段时间本人利用业余时间，在网上查询各种资料，使用Hexo+Github的方式搭建起了我个人的博客——BrightLoong。相信网上已经有无数前辈写了类似的文章来记录如何搭建博客的过程和步骤，我也不哗众取宠或者班门弄斧了，把我在搭建博客中使用 资料做一个收集，同时也将我在搭建博客过程中遇到的坑列举出来，以及对应的解决方法，也是对搭建博客过程的一个记录，毕竟好">
+<meta name="twitter:title" content="Gulp前端项目构建最佳实践">
+<meta name="twitter:description" content="基于前端的自动化构建工具">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -114,7 +114,7 @@
         
   
     <h1 class="post-title" itemprop="name">
-      Hexo+Github搭建个人博客
+      Gulp前端项目构建最佳实践
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -143,12 +143,37 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="一-主题简介"><a href="#一-主题简介" class="headerlink" title="一. 主题简介"></a>一. 主题简介</h3><p>&emsp;&emsp;前段时间本人利用业余时间，在网上查询各种资料，使用Hexo+Github的方式搭建起了我个人的博客——BrightLoong。相信网上已经有无数前辈写了类似的文章来记录如何搭建博客的过程和步骤，我也不哗众取宠或者班门弄斧了，把我在搭建博客中使用 资料做一个收集，同时也将我在搭建博客过程中遇到的坑列举出来，以及对应的解决方法，也是对搭建博客过程的一个记录，毕竟好记性不如烂笔头。那话不多说，接下来就是一个简单的介绍以及如何搭建的步骤(本文基本也是安照官方的步骤在介绍，我只是在有些地方记了下自己踩过的坑，强烈建议大家跟着Hexo官方文档操作)。<br><a id="more"></a></p>
+            <h4 id="基于前端的自动化构建工具"><a href="#基于前端的自动化构建工具" class="headerlink" title="基于前端的自动化构建工具"></a>基于前端的自动化构建工具</h4><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gulp.task()<span class="comment">//创建任务</span></div><div class="line">gulp.src()<span class="comment">//获取源文件    input</span></div><div class="line">gulp.dest()<span class="comment">//输出源文件    output</span></div><div class="line">gulp.watch()<span class="comment">//监听文件</span></div></pre></td></tr></table></figure>
+<h4 id="1-建立站点文件夹"><a href="#1-建立站点文件夹" class="headerlink" title="1.建立站点文件夹"></a>1.建立站点文件夹</h4><p>1.1    开发环境，<br>1.2    生产环境，<br>1.3    Gulp环境搭建：    gulp<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp</div></pre></td></tr></table></figure></p>
+<h4 id="2-开发环境向生产环境输出"><a href="#2-开发环境向生产环境输出" class="headerlink" title="2.开发环境向生产环境输出"></a>2.开发环境向生产环境输出</h4><p>  2.1    清空文件夹：    del<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev del</div></pre></td></tr></table></figure></p>
+<p>使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">gulp.task(<span class="string">'del'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	del([<span class="string">'build/*'</span>]).then(<span class="function"><span class="params">paths</span> =&gt;</span> &#123;</div><div class="line">	    <span class="built_in">console</span>.log(<span class="string">'Deleted files and folders:\n'</span>, paths.join(<span class="string">'\n'</span>));</div><div class="line">	&#125;);</div><div class="line">&#125;)</div><div class="line">del.sync([<span class="string">'public/assets/**'</span>, <span class="string">'!public/assets'</span>, <span class="string">'!public/assets/goat.png'</span>]);<span class="comment">// 注意:**匹配所有子和父类,所以避免删除父类文件夹，必须在其前面加！,加了！的文件不会删除</span></div></pre></td></tr></table></figure></p>
+<p>2.2    文件改名：    gulp-rename<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-rename</div></pre></td></tr></table></figure></p>
+<p>2.3    复制文件：    src/..    →    dest    →    build/.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.pipe(gulp.dest(<span class="string">'./build/..'</span>))    <span class="comment">//输出文件到指定目录下</span></div></pre></td></tr></table></figure></p>
+<p>2.4    LESS文件编译：    gulp-less<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-less</div></pre></td></tr></table></figure></p>
+<p>使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.pipe(less())</div></pre></td></tr></table></figure></p>
+<p>2.5    CSS合并：    gulp-concat<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-concat</div></pre></td></tr></table></figure></p>
+<p>使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.pipe(concat(<span class="string">'main.js'</span>, &#123;<span class="attr">newLine</span>: <span class="string">';'</span>&#125;))<span class="comment">//合并文件为某某，自动添加封号。</span></div></pre></td></tr></table></figure></p>
+<p>2.6    CSS压缩：    gulp-clean-css<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev  gulp-clean-css</div></pre></td></tr></table></figure></p>
+<p>使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.pipe(cleanCSS(&#123;<span class="attr">compatibility</span>: <span class="string">'ie8'</span>&#125;))<span class="comment">//压缩css,并且兼容ie8</span></div></pre></td></tr></table></figure></p>
+<p>2.7    JS    ES6→ES5：    gulp-babel<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-babel babel-preset-env</div></pre></td></tr></table></figure></p>
+<p>使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.pipe(babel(&#123;</div><div class="line">            presets: [<span class="string">'env'</span>]</div><div class="line">        &#125;))</div></pre></td></tr></table></figure></p>
+<p>2.8    JS合并：    gulp-concat<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-concat</div></pre></td></tr></table></figure></p>
+<p>2.9    JS压缩：    gulp-uglify<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-uglify</div></pre></td></tr></table></figure></p>
+<p>2.10    图片压缩：    gulp-imagemin<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-imagemin</div></pre></td></tr></table></figure></p>
+<p>2.11    雪碧图（Sprite Image）/精灵图：    gulp-css-spriter<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev  gulp-css-spriter</div></pre></td></tr></table></figure></p>
+<p>2.12    base64转码：    gulp-base64<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-base64</div></pre></td></tr></table></figure></p>
+<h4 id="3-浏览器（服务器）同步："><a href="#3-浏览器（服务器）同步：" class="headerlink" title="3.浏览器（服务器）同步："></a>3.浏览器（服务器）同步：</h4><p>3.1    建立服务器：    browser-sync 3.1    建立服务器：    browser-sync<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev browser-sync</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>).create();<span class="comment">//引入</span></div></pre></td></tr></table></figure>
+<p> 3.2    浏览器实时刷新：    browser对象的    .reload<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reload = browserSync.reload;</div></pre></td></tr></table></figure></p>
+<h4 id="4-Gulp项目自动化配置："><a href="#4-Gulp项目自动化配置：" class="headerlink" title="4.Gulp项目自动化配置："></a>4.Gulp项目自动化配置：</h4><p> 4.1    路径统一修改与配置：<br> 全局把开发环境，生产环境的文件路径分别全局定义<br> 4.2    版本控制：    gulp-rev,gulp-rev-conllector<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-rev//生成版本</div><div class="line">npm install --save-dev gulp-rev-conllector//获取版本指定的文件</div></pre></td></tr></table></figure></p>
+<p> 4.3    Gulp操作流程控制：<br> 4.4    Gulp项目通知：    gulp-notify<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-notify</div></pre></td></tr></table></figure></p>
+<p> 4.5    按照指定的顺序运行一组任务：    gulp-run-sequence<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev gulp-run-sequence</div></pre></td></tr></table></figure></p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年10月08日 09:52</p>
-        <p>原始链接： <a class="post-url" href="/2017/10/08/article2/" title="Hexo+Github搭建个人博客">http://yoursite.com/2017/10/08/article2/</a></p>
+        <p>最后更新： 2017年10月09日 21:25</p>
+        <p>原始链接： <a class="post-url" href="/2017/10/08/article2/" title="Gulp前端项目构建最佳实践">http://yoursite.com/2017/10/08/article2/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="EdenYaoYao">
@@ -170,7 +195,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/10/08/article2/&title=《Hexo+Github搭建个人博客》 — EdenYaoYao`s Blog&pic=http://oerolc7og.bkt.clouddn.com/images/miho/theme/github-second.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/10/08/article2/&title=《Gulp前端项目构建最佳实践》 — EdenYaoYao`s Blog&pic=http://oerolc7og.bkt.clouddn.com/images/miho/theme/github-second.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -180,7 +205,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/10/08/article2/&title=《Hexo+Github搭建个人博客》 — EdenYaoYao`s Blog&source=一. 主题简介&emsp;&emsp;前段时间本人利用业余时间，在网上查询各种资料，使用Hexo+Github的方式搭建起了我个人的博客——BrightL..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/10/08/article2/&title=《Gulp前端项目构建最佳实践》 — EdenYaoYao`s Blog&source=基于前端的自动化构建工具" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -190,7 +215,7 @@
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo+Github搭建个人博客》 — EdenYaoYao`s Blog&url=http://yoursite.com/2017/10/08/article2/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Gulp前端项目构建最佳实践》 — EdenYaoYao`s Blog&url=http://yoursite.com/2017/10/08/article2/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -217,9 +242,9 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/博客/" class="color3">博客</a>
-      
     <a href="/tags/开源项目/" class="color5">开源项目</a>
+      
+    <a href="/tags/Gulp/" class="color5">Gulp</a>
       
   </li>
 
@@ -232,7 +257,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-主题简介"><span class="post-toc-text">一. 主题简介</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于前端的自动化构建工具"><span class="post-toc-text">基于前端的自动化构建工具</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-建立站点文件夹"><span class="post-toc-text">1.建立站点文件夹</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-开发环境向生产环境输出"><span class="post-toc-text">2.开发环境向生产环境输出</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-浏览器（服务器）同步："><span class="post-toc-text">3.浏览器（服务器）同步：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-Gulp项目自动化配置："><span class="post-toc-text">4.Gulp项目自动化配置：</span></a></li></ol>
         </nav>
     </aside>
     
@@ -244,14 +269,14 @@
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          党章中的党史
+          遍历方法
         
       </span>
     </a>
   
   
-    <a href="/2017/10/07/article1/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">miho-主题安装和配置详情</span>
+    <a href="/2017/10/08/article4/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">浅谈模块化规范</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -311,10 +336,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/First/">First</a><a class="category-link" href="/categories/开源项目/">开源项目</a><a class="category-link" href="/categories/新闻/">新闻</a>
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/Javascript/">Javascript</a><a class="category-link" href="/categories/Linux/">Linux</a><a class="category-link" href="/categories/WebApp/">WebApp</a><a class="category-link" href="/categories/开源项目/">开源项目</a><a class="category-link" href="/categories/早安心语/">早安心语</a><a class="category-link" href="/categories/规范/">规范</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/中国军舰/" style="font-size: 10px;">中国军舰</a> <a href="/tags/党章/" style="font-size: 10px;">党章</a> <a href="/tags/共产党/" style="font-size: 20px;">共产党</a> <a href="/tags/十一假期/" style="font-size: 10px;">十一假期</a> <a href="/tags/十九大/" style="font-size: 10px;">十九大</a> <a href="/tags/博客/" style="font-size: 20px;">博客</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/法制晚报/" style="font-size: 10px;">法制晚报</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/高铁/" style="font-size: 10px;">高铁</a>
+            <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/早安心语/" style="font-size: 10px;">早安心语</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/自适应布局/" style="font-size: 10px;">自适应布局</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -347,7 +372,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/中国军舰/" style="font-size: 10px;">中国军舰</a> <a href="/tags/党章/" style="font-size: 10px;">党章</a> <a href="/tags/共产党/" style="font-size: 20px;">共产党</a> <a href="/tags/十一假期/" style="font-size: 10px;">十一假期</a> <a href="/tags/十九大/" style="font-size: 10px;">十九大</a> <a href="/tags/博客/" style="font-size: 20px;">博客</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/法制晚报/" style="font-size: 10px;">法制晚报</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/高铁/" style="font-size: 10px;">高铁</a>
+            <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/早安心语/" style="font-size: 10px;">早安心语</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/自适应布局/" style="font-size: 10px;">自适应布局</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a>
         </div>
     </div>
 </div>

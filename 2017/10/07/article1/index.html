@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>miho-主题安装和配置详情 | EdenYaoYao`s Blog</title>
+  <title>ES6的开发环境搭建 | EdenYaoYao`s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="EdenYaoYao,EdenYaoYao's Blog" />
   
-  <meta name="description" content="一. 主题简介&amp;emsp;&amp;emsp;MiHo 是一款单栏响应式的Hexo主题；基于 Hexo 3.0+ 制作，兼容移动端浏览；主题的代码托管在GitHub上，欢迎Star和Fork；如遇到问题或发表建议，可以提Issues，也可以在博客中留言给我，另外,喜欢的话不妨给个 Star。">
-<meta name="keywords" content="博客,开源项目">
+  <meta name="description" content="ES6的开发环境搭建现在的Chrome浏览器已经支持ES6了，但是有些低版本的浏览器还是不支持ES6的语法，这就需要我们把ES6的语法自动的转变成ES5的语法。">
+<meta name="keywords" content="Javascript,ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="miho-主题安装和配置详情">
+<meta property="og:title" content="ES6的开发环境搭建">
 <meta property="og:url" content="http://yoursite.com/2017/10/07/article1/index.html">
 <meta property="og:site_name" content="EdenYaoYao`s Blog">
-<meta property="og:description" content="一. 主题简介&amp;emsp;&amp;emsp;MiHo 是一款单栏响应式的Hexo主题；基于 Hexo 3.0+ 制作，兼容移动端浏览；主题的代码托管在GitHub上，欢迎Star和Fork；如遇到问题或发表建议，可以提Issues，也可以在博客中留言给我，另外,喜欢的话不妨给个 Star。">
+<meta property="og:description" content="ES6的开发环境搭建现在的Chrome浏览器已经支持ES6了，但是有些低版本的浏览器还是不支持ES6的语法，这就需要我们把ES6的语法自动的转变成ES5的语法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-07T15:02:06.000Z">
+<meta property="og:updated_time" content="2017-10-09T12:55:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="miho-主题安装和配置详情">
-<meta name="twitter:description" content="一. 主题简介&amp;emsp;&amp;emsp;MiHo 是一款单栏响应式的Hexo主题；基于 Hexo 3.0+ 制作，兼容移动端浏览；主题的代码托管在GitHub上，欢迎Star和Fork；如遇到问题或发表建议，可以提Issues，也可以在博客中留言给我，另外,喜欢的话不妨给个 Star。">
+<meta name="twitter:title" content="ES6的开发环境搭建">
+<meta name="twitter:description" content="ES6的开发环境搭建现在的Chrome浏览器已经支持ES6了，但是有些低版本的浏览器还是不支持ES6的语法，这就需要我们把ES6的语法自动的转变成ES5的语法。">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -114,7 +114,7 @@
         
   
     <h1 class="post-title" itemprop="name">
-      miho-主题安装和配置详情
+      ES6的开发环境搭建
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -122,7 +122,7 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/开源项目/">开源项目</a>
+                      <a href="/categories/Javascript/">Javascript</a>
                   
               </li>
           
@@ -143,12 +143,16 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="一-主题简介"><a href="#一-主题简介" class="headerlink" title="一. 主题简介"></a>一. 主题简介</h3><p>&emsp;&emsp;MiHo 是一款单栏响应式的<a href="https://hexo.io" target="_blank" rel="external">Hexo</a>主题；基于 Hexo 3.0+ 制作，兼容移动端浏览；主题的代码托管在<a href="https://github.com/WongMinHo/hexo-theme-miho" target="_blank" rel="external">GitHub</a>上，<br>欢迎Star和Fork；如遇到问题或发表建议，可以提<a href="https://github.com/WongMinHo/hexo-theme-miho/issues" target="_blank" rel="external">Issues</a>，也可以在博客中留言给我，另外,喜欢的话不妨给个 Star。<br><a id="more"></a></p>
+            <h1 id="ES6的开发环境搭建"><a href="#ES6的开发环境搭建" class="headerlink" title="ES6的开发环境搭建"></a>ES6的开发环境搭建</h1><p>现在的Chrome浏览器已经支持ES6了，但是有些低版本的浏览器还是不支持ES6的语法，这就需要我们把ES6的语法自动的转变成ES5的语法。<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install -g babel-cli</div><div class="line">npm install --save-dev babel-preset-es2015 babel-cli</div></pre></td></tr></table></figure></p>
+<h4 id="新建-babelrc"><a href="#新建-babelrc" class="headerlink" title="新建.babelrc"></a>新建.babelrc</h4><p>在根目录下新建.babelrc文件，并打开录入下面的代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"presets"</span>:[</div><div class="line">        <span class="string">"es2015"</span></div><div class="line">    ],</div><div class="line">    <span class="string">"plugins"</span>:[]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在终端输入的转换命令，把src/的ES6文件转化为dist/文件下的ES5的语法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">babel src/index.js -o dist/index.js</div></pre></td></tr></table></figure></p>
+<p>字面理解ES6的三种声明方式：</p>
+<p>var：它是variable的简写，可以理解成变量的意思。<br>let：它在英文中是“让”的意思，也可以理解为一种声明的意思。<br>const：它在英文中也是常量的意思，在ES6也是用来声明常量的，常量你可以简单理解为不变的量。</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年10月07日 23:02</p>
-        <p>原始链接： <a class="post-url" href="/2017/10/07/article1/" title="miho-主题安装和配置详情">http://yoursite.com/2017/10/07/article1/</a></p>
+        <p>最后更新： 2017年10月09日 20:55</p>
+        <p>原始链接： <a class="post-url" href="/2017/10/07/article1/" title="ES6的开发环境搭建">http://yoursite.com/2017/10/07/article1/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="EdenYaoYao">
@@ -170,7 +174,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/10/07/article1/&title=《miho-主题安装和配置详情》 — EdenYaoYao`s Blog&pic=http://oerolc7og.bkt.clouddn.com/images/miho/theme/github-second.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/10/07/article1/&title=《ES6的开发环境搭建》 — EdenYaoYao`s Blog&pic=http://oerolc7og.bkt.clouddn.com/images/miho/theme/github-second.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -180,7 +184,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/10/07/article1/&title=《miho-主题安装和配置详情》 — EdenYaoYao`s Blog&source=一. 主题简介&emsp;&emsp;MiHo 是一款单栏响应式的Hexo主题；基于 Hexo 3.0+ 制作，兼容移动端浏览；主题的代码托管在GitHu..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/10/07/article1/&title=《ES6的开发环境搭建》 — EdenYaoYao`s Blog&source=ES6的开发环境搭建现在的Chrome浏览器已经支持ES6了，但是有些低版本的浏览器还是不支持ES6的语法，这就需要我们把ES6的语法自动的转变成ES5的..." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -190,7 +194,7 @@
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《miho-主题安装和配置详情》 — EdenYaoYao`s Blog&url=http://yoursite.com/2017/10/07/article1/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ES6的开发环境搭建》 — EdenYaoYao`s Blog&url=http://yoursite.com/2017/10/07/article1/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -217,9 +221,9 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/博客/" class="color3">博客</a>
+    <a href="/tags/Javascript/" class="color1">Javascript</a>
       
-    <a href="/tags/开源项目/" class="color5">开源项目</a>
+    <a href="/tags/ES6/" class="color4">ES6</a>
       
   </li>
 
@@ -232,26 +236,26 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-主题简介"><span class="post-toc-text">一. 主题简介</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ES6的开发环境搭建"><span class="post-toc-text">ES6的开发环境搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#新建-babelrc"><span class="post-toc-text">新建.babelrc</span></a></li></ol></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2017/10/08/article2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/08/article4/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          Hexo+Github搭建个人博客
+          浅谈模块化规范
         
       </span>
     </a>
   
   
     <a href="/2017/10/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Hello World</span>
+      <span class="article-nav-title">要低头做事，更要睁眼看人</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -311,10 +315,10 @@
 <div class="sidebar-menu-box" id="sidebar-menu-box">
     <div class="sidebar-menu-box-container">
         <div id="sidebar-menu-box-categories">
-            <a class="category-link" href="/categories/First/">First</a><a class="category-link" href="/categories/开源项目/">开源项目</a><a class="category-link" href="/categories/新闻/">新闻</a>
+            <a class="category-link" href="/categories/JavaScript/">JavaScript</a><a class="category-link" href="/categories/Javascript/">Javascript</a><a class="category-link" href="/categories/Linux/">Linux</a><a class="category-link" href="/categories/WebApp/">WebApp</a><a class="category-link" href="/categories/开源项目/">开源项目</a><a class="category-link" href="/categories/早安心语/">早安心语</a><a class="category-link" href="/categories/规范/">规范</a>
         </div>
         <div id="sidebar-menu-box-tags">
-            <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/中国军舰/" style="font-size: 10px;">中国军舰</a> <a href="/tags/党章/" style="font-size: 10px;">党章</a> <a href="/tags/共产党/" style="font-size: 20px;">共产党</a> <a href="/tags/十一假期/" style="font-size: 10px;">十一假期</a> <a href="/tags/十九大/" style="font-size: 10px;">十九大</a> <a href="/tags/博客/" style="font-size: 20px;">博客</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/法制晚报/" style="font-size: 10px;">法制晚报</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/高铁/" style="font-size: 10px;">高铁</a>
+            <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/早安心语/" style="font-size: 10px;">早安心语</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/自适应布局/" style="font-size: 10px;">自适应布局</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a>
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
@@ -347,7 +351,7 @@
     <div class="mobile-header-tag-container">
         <span class="title">Tags</span>
         <div id="mobile-header-container-tags">
-            <a href="/tags/Hello-World/" style="font-size: 10px;">Hello World</a> <a href="/tags/中国军舰/" style="font-size: 10px;">中国军舰</a> <a href="/tags/党章/" style="font-size: 10px;">党章</a> <a href="/tags/共产党/" style="font-size: 20px;">共产党</a> <a href="/tags/十一假期/" style="font-size: 10px;">十一假期</a> <a href="/tags/十九大/" style="font-size: 10px;">十九大</a> <a href="/tags/博客/" style="font-size: 20px;">博客</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/法制晚报/" style="font-size: 10px;">法制晚报</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/高铁/" style="font-size: 10px;">高铁</a>
+            <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Gulp/" style="font-size: 10px;">Gulp</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/开源项目/" style="font-size: 20px;">开源项目</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/早安心语/" style="font-size: 10px;">早安心语</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/环境变量/" style="font-size: 10px;">环境变量</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/自适应布局/" style="font-size: 10px;">自适应布局</a> <a href="/tags/遍历/" style="font-size: 10px;">遍历</a>
         </div>
     </div>
 </div>

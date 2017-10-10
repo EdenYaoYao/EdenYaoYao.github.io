@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>遍历方法 | EdenYaoYao`s Blog</title>
+  <title>浅谈模块化规范 | EdenYaoYao`s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="EdenYaoYao,EdenYaoYao's Blog" />
   
-  <meta name="description" content="遍历方法1.forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。2.使用foreach遍历数组的话，使用break不能中断循环，使用return也不能返回到外层函数。3.for in更适合遍历对象，会遍历数组所有的可枚举属性，包括原型。例如上栗的原型方法method和name属性4.ES6中for of遍历的只是数组内的元素，而不包括数组的原型属性method和索引name注意">
-<meta name="keywords" content="开源项目,遍历">
+  <meta name="description" content="无模块化开发时代弊病：1.全局环境变量污染；2.命名冲突；3.依赖关系不好处理； 模块化开发的好处：1.不污染模块外的任何代码；2.方便依赖关系管理；3.易于更新，合作，分层；">
+<meta name="keywords" content="模块化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="遍历方法">
-<meta property="og:url" content="http://yoursite.com/2017/10/09/article3/index.html">
+<meta property="og:title" content="浅谈模块化规范">
+<meta property="og:url" content="http://yoursite.com/2017/10/08/article4/index.html">
 <meta property="og:site_name" content="EdenYaoYao`s Blog">
-<meta property="og:description" content="遍历方法1.forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。2.使用foreach遍历数组的话，使用break不能中断循环，使用return也不能返回到外层函数。3.for in更适合遍历对象，会遍历数组所有的可枚举属性，包括原型。例如上栗的原型方法method和name属性4.ES6中for of遍历的只是数组内的元素，而不包括数组的原型属性method和索引name注意">
+<meta property="og:description" content="无模块化开发时代弊病：1.全局环境变量污染；2.命名冲突；3.依赖关系不好处理； 模块化开发的好处：1.不污染模块外的任何代码；2.方便依赖关系管理；3.易于更新，合作，分层；">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-10-09T13:29:18.000Z">
+<meta property="og:updated_time" content="2017-10-09T13:40:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="遍历方法">
-<meta name="twitter:description" content="遍历方法1.forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。2.使用foreach遍历数组的话，使用break不能中断循环，使用return也不能返回到外层函数。3.for in更适合遍历对象，会遍历数组所有的可枚举属性，包括原型。例如上栗的原型方法method和name属性4.ES6中for of遍历的只是数组内的元素，而不包括数组的原型属性method和索引name注意">
+<meta name="twitter:title" content="浅谈模块化规范">
+<meta name="twitter:description" content="无模块化开发时代弊病：1.全局环境变量污染；2.命名冲突；3.依赖关系不好处理； 模块化开发的好处：1.不污染模块外的任何代码；2.方便依赖关系管理；3.易于更新，合作，分层；">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -107,14 +107,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-article3" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-article4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      遍历方法
+      浅谈模块化规范
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -122,12 +122,12 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/JavaScript/">JavaScript</a>
+                      <a href="/categories/规范/">规范</a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2017-10-09
+          <i class="fa fa-calendar"></i>  2017-10-08
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -143,12 +143,22 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="遍历方法"><a href="#遍历方法" class="headerlink" title="遍历方法"></a>遍历方法</h3><p>1.forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。<br>2.使用foreach遍历数组的话，使用break不能中断循环，使用return也不能返回到外层函数。<br>3.for in更适合遍历对象，会遍历数组所有的可枚举属性，包括原型。例如上栗的原型方法method和name属性<br>4.ES6中for of遍历的只是数组内的元素，而不包括数组的原型属性method和索引name<br>注意，for in遍历的是数组的索引（即键名），而for of遍历的是数组元素值<br><a id="more"></a></p>
+            <h4 id="无模块化开发时代弊病："><a href="#无模块化开发时代弊病：" class="headerlink" title="无模块化开发时代弊病："></a>无模块化开发时代弊病：</h4><p>1.全局环境变量污染；2.命名冲突；3.依赖关系不好处理；</p>
+<h4 id="模块化开发的好处："><a href="#模块化开发的好处：" class="headerlink" title="模块化开发的好处："></a>模块化开发的好处：</h4><p>1.不污染模块外的任何代码；2.方便依赖关系管理；3.易于更新，合作，分层；<br><a id="more"></a></p>
+<h4 id="无模块化开发时代弊病：-1"><a href="#无模块化开发时代弊病：-1" class="headerlink" title="无模块化开发时代弊病："></a>无模块化开发时代弊病：</h4><p>1.全局环境变量污染；2.命名冲突；3.依赖关系不好处理；</p>
+<h4 id="模块化开发的好处：-1"><a href="#模块化开发的好处：-1" class="headerlink" title="模块化开发的好处："></a>模块化开发的好处：</h4><p>1.不污染模块外的任何代码；2.方便依赖关系管理；3.易于更新，合作，分层；</p>
+<h4 id="何为模块化？"><a href="#何为模块化？" class="headerlink" title="何为模块化？"></a>何为模块化？</h4><p><strong>模块</strong>：实现特定功能的一组方法。<br><strong>模块化</strong>:要求在编写代码的时候，按层次，按功能，将独立的逻辑，封装成可重用的模块，对外提供直接明了的调用接口，内部实现细节完全私有，并且模块之间的内部实现在执行期间互不干扰。</p>
+<h6 id="模块化开发，遵循3个规范：commonjs，AMD，CMD；"><a href="#模块化开发，遵循3个规范：commonjs，AMD，CMD；" class="headerlink" title="模块化开发，遵循3个规范：commonjs，AMD，CMD；"></a>模块化开发，遵循3个规范：commonjs，AMD，CMD；</h6><h5 id="commonjs规范"><a href="#commonjs规范" class="headerlink" title="commonjs规范"></a>commonjs规范</h5><p>1.每个文件就是一个模块，有自己的作用域；<br>2.在每一个文件定义的变量，函数，类，都是私有的，其他文件不可见<br>node.js遵循的就是common规范，不适用于浏览器，只适用于服务器端</p>
+<h5 id="CMD规范-同步模块定义"><a href="#CMD规范-同步模块定义" class="headerlink" title="CMD规范     同步模块定义"></a>CMD规范     同步模块定义</h5><p>CMD类似于commonjs，一个文件就是一个模块的方法。<br>主要运用在前端当中的sea.js这个框架<br>sea.js是一个遵循cmd规范的javascript模块加载框架，可以事先JavaScript的模块化开发及加载机制<br>与jquery等JavaScript框架不同，sea.js不会扩展封装语言特性。而只是实现JavaScript的模块化及模块加载<br>sea.js作者：玉伯</p>
+<h5 id="AMD规范-异步模块定义"><a href="#AMD规范-异步模块定义" class="headerlink" title="AMD规范    异步模块定义"></a>AMD规范    异步模块定义</h5><p>先定义所有依赖，然后在加载完成后的回调函数中执行，所有的模块将被异步加载，模块加载不影响后面语句的执行</p>
+<p>AMD规范运用在requireJS 说道requireJS规范 AMD规范 异步加载</p>
+<h5 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h5><p>import from export 加载模块  需要babel转义打包</p>
+<h6 id="requireJS是什么？"><a href="#requireJS是什么？" class="headerlink" title="requireJS是什么？"></a>requireJS是什么？</h6><p>RequireJS是一个Javascript 文件和模块框架，是一个JavaScript模块加载器。有利于代码的可扩展性和重用性。它非常适合在浏览器中使用，但它也可以用在其他的脚本环境中，使用requireJS加载模块化脚本将提高代码的加载的速度。<br>RequireJS API 存在于RequireJS载入时创建的命名空间requirejs下。其主要API主要是下面三个函数:<br>define– 该函数用户创建模块。每个模块拥有一个唯一的模块ID，它被用于RequireJS的运行时函数，define函数是一个全局函数，不需要使用requirejs命名空间.<br>require– 该函数用于读取依赖。同样它是一个全局函数，不需要使用requirejs命名空间.<br>config– 该函数用于配置RequireJS.</p>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2017年10月09日 21:29</p>
-        <p>原始链接： <a class="post-url" href="/2017/10/09/article3/" title="遍历方法">http://yoursite.com/2017/10/09/article3/</a></p>
+        <p>最后更新： 2017年10月09日 21:40</p>
+        <p>原始链接： <a class="post-url" href="/2017/10/08/article4/" title="浅谈模块化规范">http://yoursite.com/2017/10/08/article4/</a></p>
         <footer>
             <a href="http://yoursite.com">
                 <img src="/images/logo.png" alt="EdenYaoYao">
@@ -170,7 +180,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/10/09/article3/&title=《遍历方法》 — EdenYaoYao`s Blog&pic=http://oerolc7og.bkt.clouddn.com/images/miho/theme/github-second.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/10/08/article4/&title=《浅谈模块化规范》 — EdenYaoYao`s Blog&pic=http://oerolc7og.bkt.clouddn.com/images/miho/theme/github-second.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -180,22 +190,23 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/10/09/article3/&title=《遍历方法》 — EdenYaoYao`s Blog&source=遍历方法1.forEach() 方法用于调用数组的每个元素，并将元素传递给回调函数。2.使用foreach遍历数组的话，使用break不能中断循环，使用r..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/10/08/article4/&title=《浅谈模块化规范》 — EdenYaoYao`s Blog&source=无模块化开发时代弊病：1.全局环境变量污染；2.命名冲突；3.依赖关系不好处理；
+模块化开发的好处：1.不污染模块外的任何代码；2.方便依赖关系管理；3...." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/09/article3/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/08/article4/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《遍历方法》 — EdenYaoYao`s Blog&url=http://yoursite.com/2017/10/09/article3/&via=http://yoursite.com" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《浅谈模块化规范》 — EdenYaoYao`s Blog&url=http://yoursite.com/2017/10/08/article4/&via=http://yoursite.com" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/09/article3/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/08/article4/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -205,7 +216,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2017/10/09/article3/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2017/10/08/article4/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -217,9 +228,7 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/开源项目/" class="color5">开源项目</a>
-      
-    <a href="/tags/遍历/" class="color3">遍历</a>
+    <a href="/tags/模块化/" class="color4">模块化</a>
       
   </li>
 
@@ -232,26 +241,26 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#遍历方法"><span class="post-toc-text">遍历方法</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#无模块化开发时代弊病："><span class="post-toc-text">无模块化开发时代弊病：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模块化开发的好处："><span class="post-toc-text">模块化开发的好处：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#无模块化开发时代弊病：-1"><span class="post-toc-text">无模块化开发时代弊病：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模块化开发的好处：-1"><span class="post-toc-text">模块化开发的好处：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#何为模块化？"><span class="post-toc-text">何为模块化？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#模块化开发，遵循3个规范：commonjs，AMD，CMD；"><span class="post-toc-text">模块化开发，遵循3个规范：commonjs，AMD，CMD；</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#commonjs规范"><span class="post-toc-text">commonjs规范</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#CMD规范-同步模块定义"><span class="post-toc-text">CMD规范     同步模块定义</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#AMD规范-异步模块定义"><span class="post-toc-text">AMD规范    异步模块定义</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ES6"><span class="post-toc-text">ES6</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#requireJS是什么？"><span class="post-toc-text">requireJS是什么？</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2017/10/09/article6/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/10/08/article2/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          Linux环境变量配置
+          Gulp前端项目构建最佳实践
         
       </span>
     </a>
   
   
-    <a href="/2017/10/08/article2/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Gulp前端项目构建最佳实践</span>
+    <a href="/2017/10/07/article1/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">ES6的开发环境搭建</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -260,7 +269,7 @@
 
 
     
-        <div id="SOHUCS" sid="article3" ></div>
+        <div id="SOHUCS" sid="article4" ></div>
 <script type="text/javascript">
     (function(){
         var appid = 'true';
